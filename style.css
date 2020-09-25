@@ -1,0 +1,240 @@
+/*I have to find out why the changed px on desktop does not work, navbar top, image responsivenes, check skills section to ensure that all skills show on mobile view*/
+/*General styles*/
+html, body{
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    background-color: #00692b;
+    color: #f3f3f3;
+    border: 2px solid #022615;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    padding: 20px;
+    color: inherit;
+}
+
+/*End of general styles*/
+
+/*Navigation styles*/
+nav{
+    margin-top: -4px; /*would prefer an alternate way instead*/
+    width: 100%;
+    position: fixed;
+    background-color: #022615;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    z-index: 10;
+}
+
+nav a{
+    font-size: 1.3em;
+    transition: ease-in 0.5s background-color;
+}
+
+nav a:hover{
+    color: #00692b;
+    background-color: #f3f3f3;
+}
+
+h1, h2, h3, a{
+    font-family: 'Fondamento', cursive;
+}
+
+p, span{
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+}
+/*End of navigation styles*/
+
+/*About section styles*/
+#welcome-section{
+    height: 100vh;
+    padding-top: 25vh;
+}
+
+.about-header{
+    font-size: 7vh;
+    margin: 5.5vh 0 0;
+}
+
+.about-image{
+    width: 40vh;
+    height: 35vh;
+    border-radius: 50%;
+    border: 2px solid #022615;
+    box-shadow: 0 10px 10px 10px #022615;
+}
+
+.about-text-container p{
+    font-size: 3.5vh;
+}
+/*End of about section styles*/
+
+/*Skills section*/
+#skills-section, #contact-section{
+    background-color: #022615;
+}
+
+#skills-section{
+    padding: 20px 20px 40px;
+}
+
+.skills-container{
+    margin: 40px auto 20px;
+    background-color: #fefefe;
+    box-shadow: inset 10px 10px 5px #03301b, inset -10px -10px 5px #03301b;
+    color: #022615;
+    padding: 25px 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    animation: mobileReset 10s ease-in;
+}
+
+@keyframes mobileReset{
+    0%{
+        background-color: #bfbfbf
+
+        ; /*i'll check for a perfect progression*/
+    }
+    50%{
+        background-color: #f2f2f2;
+    }
+}
+
+.skills{
+    font-weight: 700;
+    animation: skillMove 5s ease-in;
+}
+
+@keyframes skillMove{
+    0%{
+        transform: translateX(73vw);
+    }
+}
+/*End of skills section*/
+
+/*Projects section*/
+#projects{
+    padding: 20px;
+}
+
+.project-tile{
+    background-color: #022615;
+    padding: 20px;
+    margin: 10px auto 30px;
+}
+.project-tile:hover, .more-container{
+    transition: ease-in 0.4s transform;}
+
+.project-tile a{
+    padding: 0;
+}
+
+.project-img{
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+}
+
+.tag{
+    padding: 5px;
+}
+
+.more-container{
+    margin: 30px 0 60px;
+}
+
+.more-container:hover{
+    transform: scale(1.03);
+}
+
+.more-projects-link{
+    background-color: #022615;
+    border-radius: 5px;
+    padding: 15px 30px;
+}
+
+.project-tile:hover, .more-projects-link:hover, .social-icon-container a:hover{
+    transform: scale(1.03);
+    box-shadow: 0 10px 15px #03301b;
+}
+/*End of projects section*/
+
+/*Contact me section*/
+#contact-section{
+    padding: 30px 10px 10px;
+}
+
+.social-icon-container{
+    padding: 30px 20px 20px;
+    line-height: 4;
+}
+
+.social-icon{
+    margin: 0 10px;
+}
+
+#contact-section p{
+    padding: 18px 10px 0;
+    font-size: 1em;
+}
+/*End of contact me section*/
+
+/*Mobile responsive*/
+@media screen and (max-width: 900px){
+    nav{
+        justify-content: space-evenly;
+    }
+    nav a{
+        padding: 20px 0;
+        flex-basis: 25%;
+    }
+    .project-tile{
+        width: 70%;
+    }
+}
+
+/*Responsive for tablet, desktop*/
+@media screen and (min-width: 900px){
+    html, body{
+        font-size: 18px;
+    }
+
+    #welcome-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5vh;
+    }
+
+    .about-text-container{
+        margin-left: 20px;
+    }
+
+    .skills-container{
+        padding: 30px;
+        width: 80%;
+    }
+
+    .project-row{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 20px;
+    }
+}
+/*Responsive for larger desktop*/
+@media screen and (min-width: 1200px){
+    html, body{
+        font-size: 20px;
+    }
+}
